@@ -1,17 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package model;
+
+import java.util.ResourceBundle;
 
 /**
  *
  * @author Ander Espino, Adrian Moreno
  */
 public class ModelFactory {
-    
+    /**
+     * Esta clase recoge un objeto modelo
+     * @return Devuelve un objeto modelo
+     */
     public static Model getModel(){
-        return new FileModelImplementation();
+        
+        String model = ResourceBundle.getBundle("model.propertiesTipo").getString("model");
+        
+        if(model.equalsIgnoreCase("file")){
+            return new FileModelImplementation();
+        } else {
+            return new DBModelImplementation();
+        }
+        
     }
 }

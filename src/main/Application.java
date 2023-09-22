@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package reto0_g3;
+package main;
 
 import view.ApplicationController;
 import javafx.fxml.FXMLLoader;
