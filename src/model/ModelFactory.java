@@ -13,14 +13,15 @@ public class ModelFactory {
      * @return Devuelve un objeto modelo
      */
     public static Model getModel(){
+        Model model=null;
+        String option = ResourceBundle.getBundle("model.propertiesTipo").getString("model");
         
-        String model = ResourceBundle.getBundle("model.propertiesTipo").getString("model");
-        
-        if(model.equalsIgnoreCase("file")){
+        if(option.equalsIgnoreCase("file")){
             return new FileModelImplementation();
-        } else {
+        } else if (option.equalsIgnoreCase("DB")){
             return new DBModelImplementation();
         }
+        return model;
         
     }
 }

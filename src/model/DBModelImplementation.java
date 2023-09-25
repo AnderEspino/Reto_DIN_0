@@ -30,11 +30,11 @@ public class DBModelImplementation implements Model {
 
     // Metodo para conectarnos a la base de datos
     public DBModelImplementation() {
-        this.configFichero = ResourceBundle.getBundle("modelo.propertiesMessage");
-        this.driverBD = this.configFichero.getString("Driver");
-        this.urlBD = this.configFichero.getString("Conn");
-        this.userBD = this.configFichero.getString("DBUser");
-        this.passwordBD = this.configFichero.getString("DBPass");
+        this.configFichero = ResourceBundle.getBundle("model.propertiesBD");
+        this.driverBD = configFichero.getString("Driver");
+        this.urlBD = configFichero.getString("Conn");
+        this.userBD = configFichero.getString("DBUser");
+        this.passwordBD = configFichero.getString("DBPass");
     }
 
     /**
@@ -77,21 +77,21 @@ public class DBModelImplementation implements Model {
     public String getGreeting() {
         ResultSet rs = null;
         String greeting = null;
-        
+
         this.openConnection();
         try {
             stmt = con.prepareStatement(getGreeting);
-            rs=stmt.executeQuery();
-            if(rs.next()){
-                greeting=rs.getString(1);
+            rs = stmt.executeQuery();
+            if (rs.next()) {
+                greeting = rs.getString(1);
             }
-            
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             try {
                 closeConnection();
-                if(rs != null){
+                if (rs != null) {
                     rs.close();
                 }
             } catch (SQLException e) {

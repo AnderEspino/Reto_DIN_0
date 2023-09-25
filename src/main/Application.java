@@ -5,7 +5,6 @@
  */
 package main;
 
-import view.ApplicationController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,24 +16,15 @@ import view.ViewFactory;
  *
  * @author 2dam
  */
-public class Application extends javafx.application.Application {
-    
-    @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Application.fxml"));
-        
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.show();
-    }
+public class Application {
 
     /**
+     * @author Adrian, Ander
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         //launch(args);
         new ApplicationController().run(ViewFactory.getView(), ModelFactory.getModel());
     }
-    
+
 }
