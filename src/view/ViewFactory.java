@@ -5,6 +5,8 @@
  */
 package view;
 
+import java.util.ResourceBundle;
+
 /**
  *
  * @author Ander Espino, Adrian Moreno
@@ -12,8 +14,17 @@ package view;
 public class ViewFactory {
    
     public static View getView() {
-       
-        return new TextImplementation();
+
+        View  view =null;
+        String option = ResourceBundle.getBundle("properties.propertiesTipo").getString("model");
+        
+        if(option.equalsIgnoreCase("text")){
+            return new TextImplementation();
+        } else if (option.equalsIgnoreCase("window")){
+            return (View) new ViewImplementation();
+        }
+        return view;
         
     }
 }
+

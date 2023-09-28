@@ -5,41 +5,37 @@
  */
 package main;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import model.Model;
 import view.View;
-import view.View;
 
 /**
- *
- * @author 2dam
+ * Esta clase actua como intermediario entre el Modelo y la Vista, gestionando
+ * el flujo de informacion entre estos dos
+ * @author Ander, Adrian
  */
 public class ApplicationController extends javafx.application.Application {
-    
-    @FXML
-    private Label label;
-    
-  
-    
-    @Override
-  public void start(Stage primaryStage) throws Exception {
-		
-                
-		
-	} 
-    
-    public void run(View view, Model model) {
+
+
+    /**
+     * Metodo que recibe el Modelo y la Vista como parametro para mostrar un 
+     * saludo.
+     * @param view  recibe el tipo de Vista que se va a mostrar. Puede ser de
+     * tipo texto o de tipo grafico.
+     * @param model recibe el tipo de Modelo donde esta almacenado el saludo.
+     * Puede estar guardado en un archivo de propiedades o en una base de 
+     * datos.
+     */
+    public void run(View view,Model model){
         view.showGreeting(model.getGreeting());
     }
 
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

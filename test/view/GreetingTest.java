@@ -21,25 +21,6 @@ public class GreetingTest {
     public GreetingTest() {
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of getValue method, of class Greeting.
-     */
     @Test
     public void testGetValue() {
         System.out.println("getValue");

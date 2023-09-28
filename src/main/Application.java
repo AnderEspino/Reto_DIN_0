@@ -1,30 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package main;
 
+
+import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-import model.ModelFactory;
-import view.ViewFactory;
+import static model.ModelFactory.getModel;
+import view.View;
+import static view.ViewFactory.getView;
 
 /**
- *
- * @author 2dam
+ * Clase principal la cual va a abrir la primera ventana SignIn
+ * @author Unai Urtiaga
  */
-public class Application {
+public abstract class Application extends javafx.application.Application{
 
     /**
-     * @author Adrian, Ander
+     * Metodo main que va a ejecutar el metodo start
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //launch(args);
-        new ApplicationController().run(ViewFactory.getView(), ModelFactory.getModel());
+        ApplicationController controller = new ApplicationController();
+        controller.run(getView(), getModel());
     }
 
+    
 }
