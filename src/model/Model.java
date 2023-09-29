@@ -6,7 +6,7 @@
 package model;
 
 /**
- *
+ *  Esta interfaz es modelos
  * @author Ander Espino, Adrian Moreno
  */
 public interface Model {

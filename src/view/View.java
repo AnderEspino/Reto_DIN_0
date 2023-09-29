@@ -6,11 +6,12 @@
 package view;
 
 /**
+ * Esta es la interfaz modelo.
  *
  * @author Ander Espino, Adrian Moreno
  */
-public interface View  {
-   public void showGreeting(String greeting);
-   
-   
+public interface View {
+
+    public void showGreeting(String greeting);
+
 }

@@ -5,11 +5,9 @@
  */
 package view;
 
-import java.util.Locale;
-import java.util.ResourceBundle;
 
 /**
- *
+ * Metodo que recoge el saludo
  * @author Ander Espino, Adrian Moreno
  */
 public class TextImplementation implements View {
