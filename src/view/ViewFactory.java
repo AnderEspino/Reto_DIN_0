@@ -9,21 +9,22 @@ import java.util.ResourceBundle;
 
 /**
  * Esta clase sirve para crear vistas.
+ *
  * @author Ander Espino, Adrian Moreno
  */
 public class ViewFactory {
-   
+
     public static View getView() {
 
-        View  view =null;
+        View view = null;
         String option = ResourceBundle.getBundle("properties.propertiesTipo").getString("view");
-        
-        if(option.equalsIgnoreCase("text")){
+
+        if (option.equalsIgnoreCase("text")) {
             return new TextImplementation();
-        } else if (option.equalsIgnoreCase("window")){
-            return (View) new JavaFXImplementation();
+        } else if (option.equalsIgnoreCase("window")) {
+            return (View) new JavaFXViewImplementation();
         }
         return view;
-        
+
     }
 }
