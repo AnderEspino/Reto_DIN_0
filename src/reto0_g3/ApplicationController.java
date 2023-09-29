@@ -5,36 +5,56 @@
  */
 package reto0_g3;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
- *
- * @author 2dam
+ * Esta clase sirve como el controlador de Java FX
+ * @author Ander
  */
-public class ApplicationController implements Initializable {
+public class ApplicationController {
 
     @FXML
-    private Button button;
+    private Pane panel;
     @FXML
-    private Label label;
+    private Label lbl_Greeting;
+    @FXML
+    private Stage stage;
+
+    private String greeting;
+
+    protected static final Logger LOGGER = Logger.getLogger("/main/ApplicationController");
 
     /**
-     * Initializes the controller class.
+     * Método initiStage, se encarga la ventana y de su ejecución
+     * @author Ander, Adrian
+     * @param root
      */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initStage(Parent root) {
         // TODO
-    }    
-
-    @FXML
-    private void handleButtonAction(ActionEvent event) {
+        LOGGER.info("Initializing the greeting visual interface");
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Greeting");
+        lbl_Greeting.setStyle("-fx-aligment: center-right");
+        lbl_Greeting.setStyle("-fx-font-size: 20px");
+        lbl_Greeting.setText(greeting);
+        stage.show();
     }
-    
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+
+    public void showGreeting(String message) {
+        this.greeting = message;
+    }
+
 }

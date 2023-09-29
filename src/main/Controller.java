@@ -4,10 +4,6 @@
  * and open the template in the editor.
  */
 package main;
-
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import model.Model;
 import view.View;
@@ -17,8 +13,7 @@ import view.View;
  * el flujo de informacion entre estos dos
  * @author Ander, Adrian
  */
-public class ApplicationController extends javafx.application.Application {
-
+public class Controller  {
 
     /**
      * Metodo que recibe el Modelo y la Vista como parametro para mostrar un 
@@ -29,13 +24,12 @@ public class ApplicationController extends javafx.application.Application {
      * Puede estar guardado en un archivo de propiedades o en una base de 
      * datos.
      */
-    public void run(View view,Model model){
+    public void run(View view,Model model){     
         view.showGreeting(model.getGreeting());
     }
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
+
+    
     
 }

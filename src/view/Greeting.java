@@ -6,8 +6,8 @@
 package view;
 
 /**
- *
- * @author 2dam
+ *  Esta clase contiene getters y setters del saludo
+ * @author Ander, Adrian
  */
 public class Greeting {
 

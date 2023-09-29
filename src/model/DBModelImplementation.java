@@ -30,7 +30,7 @@ public class DBModelImplementation implements Model {
 
     // Metodo para conectarnos a la base de datos
     public DBModelImplementation() {
-        this.configFichero = ResourceBundle.getBundle("model.propertiesBD");
+        this.configFichero = ResourceBundle.getBundle("properties.propertiesBD");
         this.driverBD = configFichero.getString("Driver");
         this.urlBD = configFichero.getString("Conn");
         this.userBD = configFichero.getString("DBUser");
@@ -73,6 +73,7 @@ public class DBModelImplementation implements Model {
 
     /**
      * Metodo el cual sirve para recibir el saludo de la base de datos
+     * @author Ander, Adrian
      */
     public String getGreeting() {
         ResultSet rs = null;

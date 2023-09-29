@@ -8,7 +8,7 @@ package model;
 import java.util.ResourceBundle;
 
 /**
- *
+ * Esta clase sirve como implementacion del fichero
  * @author Ander Espino, Adrian Moreno
  */
 public class FileModelImplementation implements Model {
@@ -21,7 +21,7 @@ public class FileModelImplementation implements Model {
      * @return Devuelve un saludo en modo de String
      */
     public String getGreeting() {       
-        return ResourceBundle.getBundle("model.propertiesMessage").getString("MESSAGE");
+        return ResourceBundle.getBundle("properties.propertiesMessage").getString("MESSAGE");
 
     }
 }

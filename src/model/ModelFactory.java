@@ -4,7 +4,7 @@ package model;
 import java.util.ResourceBundle;
 
 /**
- *
+ * Esta clase sirve para crear modelos.
  * @author Ander Espino, Adrian Moreno
  */
 public class ModelFactory {
@@ -14,7 +14,7 @@ public class ModelFactory {
      */
     public static Model getModel(){
         Model model=null;
-        String option = ResourceBundle.getBundle("model.propertiesTipo").getString("model");
+        String option = ResourceBundle.getBundle("properties.propertiesTipo").getString("model");
         
         if(option.equalsIgnoreCase("file")){
             return new FileModelImplementation();
