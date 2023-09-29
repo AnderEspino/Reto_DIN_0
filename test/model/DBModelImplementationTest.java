@@ -20,12 +20,24 @@ public class DBModelImplementationTest {
     
     public DBModelImplementationTest() {
     }
+    /**
+     * En este etodo probamos la recogida del saludo
+     * @author Ander, Adrian
+     */
     
-     @Test
-    public void testgetGreeting() {
-        Model bdim = new DBModelImplementation();
-        String resultado = "Hello World from DB";
-        assertEquals("No es BD",resultado,bdim.getGreeting());
+    @Test
+    public void testGetGreeting() {
+        DBModelImplementation dbModel = new DBModelImplementation();
+        // Prueba que el método getGreeting() devuelve un saludo no nulo
+        String greeting = dbModel.getGreeting();
+        assertNotNull(greeting, "El saludo no debe ser nulo");
     }
-    
+
+    @Test
+    public void testGetGreetingEquals() {
+        DBModelImplementation dbModel = new DBModelImplementation();
+        String resultado = "Hello World!";
+        String result = dbModel.getGreeting();
+        assertEquals(resultado, result);
+    }
 }

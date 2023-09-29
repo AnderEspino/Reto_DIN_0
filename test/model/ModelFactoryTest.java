@@ -5,10 +5,6 @@
  */
 package model;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -17,27 +13,30 @@ import static org.junit.Assert.*;
  * @author ender
  */
 public class ModelFactoryTest {
-    
+
     public ModelFactoryTest() {
     }
-    
-    
+
+    /**
+     * Mediante este metodo nos aseguramos que el modelo se crea
+     *
+     * @author Ander
+     */
     @Test
-    public void testGetModel() {      
+    public void testGetModel() {
         ModelFactory mf = new ModelFactory();
-        assertNotNull(mf);       
+        assertNotNull(mf);
     }
-    
-    @Test
-    public void testGetModelImplementation() {
-        Model mi = new DBModelImplementation();
-        assertTrue("No es archivo",mi instanceof DBModelImplementation);        
-    }
-    
+
+    /**
+     * Este metodo prueba si ModelBdImpleentacion instancia de manera correcta!
+     *
+     * @author Ander
+     */
     @Test
     public void testGetModelBDImplementation() {
         Model mibd = new DBModelImplementation();
-        assertTrue("No es bd",mibd instanceof DBModelImplementation);
+        assertTrue("No es bd", mibd instanceof DBModelImplementation);
     }
-    
+
 }
